@@ -1,0 +1,23 @@
+{
+  "name": "a-social-net",
+  "version": "1.0.0",
+  "description": "An exercise using MongoDB to assist with a social network app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwarzecha/a-social-net.git"
+  },
+  "author": "gwarzecha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gwarzecha/a-social-net/issues"
+  },
+  "homepage": "https://github.com/gwarzecha/a-social-net#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.4"
+  }
+}
