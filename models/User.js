@@ -2,14 +2,14 @@ const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema({
   username: {
-    type: String, 
+    type: String,
     unique: true,
     required: true,
     trim: true
   },
   email: {
-    type: String, 
-    unique: true, 
+    type: String,
+    unique: true,
     required: true,
     match: [/.+@.+\..+/]
   },
@@ -27,13 +27,15 @@ const UserSchema = new Schema({
   {
     toJSON: {
       // include virtuals
-      virtuals: true, 
-    }
+      virtuals: true,
+    },
+    // this is a virtual and we don't need an id
+    id: false
   }
 );
 
 // virtual that retrieves the length of a user's friends array
-UserSchema.virtual('friendCount').get(function() {
+UserSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
 
