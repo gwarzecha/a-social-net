@@ -4,7 +4,7 @@ const { User } = require('../models');
 const userController = {
   // GET all users
   getAllUsers(req, res) {
-    Users.find({})
+    User.find({})
       .then(dbUserData => {
         res.json(dbUserData);
       })
@@ -16,7 +16,7 @@ const userController = {
 
   // GET a single user by _id
   getUserById({ params }, res) {
-    Users.findOne({ _id: params.id })
+    User.findOne({ _id: params.id })
       .populate([
         {
           path: 'thoughts',
