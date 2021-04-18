@@ -16,7 +16,7 @@ const userController = {
 
   // GET a single user by _id
   getUserById({ params }, res) {
-    User.findOne({ _id: params.id })
+    User.findOne({ _id: params.userId })
       .populate([
         {
           path: 'thoughts',
@@ -50,7 +50,7 @@ const userController = {
 
   // Update a user by _id
   updateUser({ params, body }, res) {
-    User.findOneAndUpdate({ _id: params.id },
+    User.findOneAndUpdate({ _id: params.userId },
       body,
       { new: true, runValidators: true })
       .then(dbUserData => {
@@ -69,7 +69,7 @@ const userController = {
   // DELETE a user by _id
   deleteUser({ params }, res) {
     User.findOneAndDelete(
-      { _id: params.id }
+      { _id: params.userId }
     )
       .then(dbUserData => {
         if (!dbUserData) {
@@ -86,7 +86,7 @@ const userController = {
 
   createFriend({ params, body }, res) {
     User.findOneAndUpdate(
-      { _id: params.id },
+      { _id: params.userId },
       { $push: { friends: params.friendId } },
       { new: true }
     )
@@ -105,7 +105,7 @@ const userController = {
   //uopdate user by deleting the exisiting friends from it 
   deleteFriend({ params }, res) {
     User.findOneAndUpdate(
-      { _id: params.id },
+      { _id: params.userId },
       { $pull: { friends: params.friendId } },
       { new: true }
     )

@@ -15,7 +15,7 @@ const thoughtsController = {
 
   getThoughtById({ params }, res) {
     Thought.findOne(
-      { _id: params.id }
+      { _id: params.thoughtId }
     )
       .then(dbThoughtData => {
         if (!dbThoughtData) {
@@ -53,7 +53,7 @@ const thoughtsController = {
 
   updateThoughtById({ params, body }, res) {
     Thought.findOneAndUpdate(
-      { _id: params.id },
+      { _id: params.thoughtId },
       body,
       { new: true }
     )
@@ -72,7 +72,7 @@ const thoughtsController = {
 
   deleteThought({ params }, res) {
     Thought.findOneAndDelete(
-      { _id: params.id }
+      { _id: params.thoughtId }
     )
       .then(dbThoughtData => {
         if (!dbThoughtData) {
@@ -113,7 +113,7 @@ const thoughtsController = {
       { new: true })
       .then(dbThoughtData => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: 'No thought found with this id' });
+          res.status(404).json({ message: 'No reaction found with this id' });
           return;
         }
         res.json(dbThoughtData);
