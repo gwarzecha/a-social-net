@@ -14,7 +14,9 @@ const thoughtsController = {
   },
 
   getThoughtById({ params }, res) {
-    Thought.findOne({ _id: params.thoughtId })
+    Thought.findOne(
+      { _id: params.id }
+    )
       .then(dbThoughtData => {
         if (!dbThoughtData) {
           res.status(404).json({ message: 'No user found with this id' });
@@ -51,7 +53,7 @@ const thoughtsController = {
 
   updateThoughtById({ params, body }, res) {
     Thought.findOneAndUpdate(
-      { _id: params.thoughtId },
+      { _id: params.id },
       body,
       { new: true }
     )
@@ -70,7 +72,7 @@ const thoughtsController = {
 
   deleteThought({ params }, res) {
     Thought.findOneAndDelete(
-      { _id: params.thoughtId }
+      { _id: params.id }
     )
       .then(dbThoughtData => {
         if (!dbThoughtData) {
@@ -121,8 +123,6 @@ const thoughtsController = {
         res.status(404).json(err);
       })
   }
-
-
 };
 
 module.exports = thoughtsController;
