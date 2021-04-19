@@ -4,7 +4,7 @@
   
   ## Description: 
 
-  A Social Net is an API for a social network app that allows users to share their thoughts, add friends, and react to the thoughts of their friends. The application uses Express.js for router instantiation, MongoDB as its NoSQL database, and the Mongoose ODM. Day.js was also used to format the timestamp that is created by MongoDB
+  A Social Net is an API for a basic, but nonexistent, social network web app that allows users to execute rudimentary actions such as creating a user, sharing their thoughts, adding friends, and reacting to the thoughts of their friends. The application uses `Express.js` for router instantiation, `MongoDB` as its NoSQL database, and the `Mongoose ODM`. `Day.js` was also used to re-format the timestamp that is created by MongoDB. This application is not deployed and will need to be used in conjunction with `Insomnia` or something similar to display the API data-models that are generated.
   
 
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
@@ -13,12 +13,11 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Contributing](#contributing)
-  * [Tests](#tests)
   * [Questions?](#questions)
   
   ## Installation: 
  
-  Once the respository is cloned and on your local machine, run 'npm i' to install all of the dependencies and then 'npm start' to boot up the local host.
+  Once the respository is cloned and on your local machine, run `npm i` to install all of the dependencies and then `npm start` to boot up the local host.
   
 
   
